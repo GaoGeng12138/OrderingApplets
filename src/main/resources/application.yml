@@ -1,0 +1,50 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /${spring.application.name}
+spring:
+  application:
+    name: OrderingApplets
+#####################################数据库配置########################################
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/product?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+#####################################mybatis-plus配置########################################
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+  type-aliases-package: com.gaog.orderingapplets.restaurant.entity
+#####################################redis配置########################################
+  redis:
+    host: localhost
+    port: 6379
+#####################################JWT配置########################################
+jwt:
+  secret: your_very_long_and_secure_secret_key_here_must_be_at_least_256_bits_long
+  expiration: 86400  # 24小时，单位：秒
+#####################################支付宝配置########################################
+alipay:
+  appId: your-app-id
+  privateKey: your-private-key
+  publicKey: your-public-key
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+#####################################日志配置########################################
+logging:
+  level:
+    com.restaurant: info
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+  file:
+    name: logs/restaurant.log 
+#####################################安全配置########################################
+security:
+  user:
+    name: none  # 禁用默认用户
+autoconfigure:
+  exclude:
+    - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration 
