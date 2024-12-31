@@ -1,6 +1,7 @@
 package com.gaog.orderingapplets.restaurant.controller.user;
 
 
+import com.gaog.orderingapplets.restaurant.annotation.SystemLog;
 import com.gaog.orderingapplets.restaurant.common.Result;
 import com.gaog.orderingapplets.restaurant.dto.user.LoginDTO;
 import com.gaog.orderingapplets.restaurant.dto.user.UserRegisterDTO;
@@ -39,6 +40,7 @@ public class AuthController {
      * @Author： ZSJ
      */
     @PostMapping("/register")
+    @SystemLog("注册用户")
     public Result<String> register(@RequestBody @Valid UserRegisterDTO registerDTO) {
         userService.register(registerDTO);
         return Result.success("注册成功");
@@ -53,6 +55,7 @@ public class AuthController {
      * @Author： ZSJ
      */
     @PostMapping("/login")
+    @SystemLog("登录")
     public Result<Map<String, String>> login(@RequestBody @Valid LoginDTO loginDTO) {
         return userService.login(loginDTO);
     }

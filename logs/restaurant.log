@@ -1113,3 +1113,282 @@ Identify and stop the process that's listening on port 8888 or configure this ap
 2024-12-31T15:29:16.933+08:00 ERROR 22820 --- [http-nio-8888-exec-2] c.g.o.r.e.GlobalExceptionHandler         : ===========================业务异常=========================
 2024-12-31T15:29:16.934+08:00 ERROR 22820 --- [http-nio-8888-exec-2] c.g.o.r.e.GlobalExceptionHandler         : 业务异常：该用户已经拥有此角色！
 2024-12-31T15:29:16.934+08:00 ERROR 22820 --- [http-nio-8888-exec-2] c.g.o.r.e.GlobalExceptionHandler         : ===========================业务异常=========================
+2024-12-31T17:16:54.359+08:00  INFO 25032 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 25032 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:16:54.363+08:00  INFO 25032 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:16:55.489+08:00  INFO 25032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:16:55.492+08:00  INFO 25032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:16:55.532+08:00  INFO 25032 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:16:56.234+08:00  INFO 25032 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:16:56.636+08:00  INFO 25032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:16:56.648+08:00  INFO 25032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:16:56.648+08:00  INFO 25032 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:16:56.756+08:00  INFO 25032 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:16:56.756+08:00  INFO 25032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2335 ms
+2024-12-31T17:16:58.058+08:00  WARN 25032 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:16:58.990+08:00  INFO 25032 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18f13756, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@665b441e, org.springframework.security.web.context.SecurityContextHolderFilter@6a63ff31, org.springframework.security.web.header.HeaderWriterFilter@3c68e82, org.springframework.security.web.authentication.logout.LogoutFilter@70819ba8, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@261a66b8, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@539c4830, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f36267d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a85e86e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ac3d530, org.springframework.security.web.session.SessionManagementFilter@37083af6, org.springframework.security.web.access.ExceptionTranslationFilter@671f545b, org.springframework.security.web.access.intercept.AuthorizationFilter@59929ac]
+2024-12-31T17:16:59.424+08:00  INFO 25032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:16:59.434+08:00  INFO 25032 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 5.663 seconds (process running for 7.92)
+2024-12-31T17:16:59.439+08:00  INFO 25032 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:18:33.736+08:00  INFO 15148 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 15148 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:18:33.739+08:00  INFO 15148 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:18:34.638+08:00  INFO 15148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:18:34.641+08:00  INFO 15148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:18:34.689+08:00  INFO 15148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:18:35.336+08:00  INFO 15148 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:18:35.683+08:00  INFO 15148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:18:35.694+08:00  INFO 15148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:18:35.695+08:00  INFO 15148 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:18:35.810+08:00  INFO 15148 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:18:35.810+08:00  INFO 15148 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2013 ms
+2024-12-31T17:18:36.808+08:00  WARN 15148 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:18:37.442+08:00  INFO 15148 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@575c23f1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62f7d7bd, org.springframework.security.web.context.SecurityContextHolderFilter@282c5075, org.springframework.security.web.header.HeaderWriterFilter@4e02f17d, org.springframework.security.web.authentication.logout.LogoutFilter@4fa6fb7f, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@72f24a84, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@7a64cb0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@362b384c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52c6e959, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@de63949, org.springframework.security.web.session.SessionManagementFilter@20a4cba7, org.springframework.security.web.access.ExceptionTranslationFilter@30333941, org.springframework.security.web.access.intercept.AuthorizationFilter@361b3ca6]
+2024-12-31T17:18:37.817+08:00  INFO 15148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:18:37.827+08:00  INFO 15148 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 4.764 seconds (process running for 5.934)
+2024-12-31T17:18:37.830+08:00  INFO 15148 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:20:00.474+08:00  INFO 15148 --- [SpringApplicationShutdownHook] o.s.s.support.LifecycleObjectSupport     : destroy called
+2024-12-31T17:20:09.192+08:00  INFO 10384 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 10384 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:20:09.195+08:00  INFO 10384 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:20:10.004+08:00  INFO 10384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:20:10.007+08:00  INFO 10384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:20:10.046+08:00  INFO 10384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:20:10.750+08:00  INFO 10384 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:20:11.076+08:00  INFO 10384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:20:11.087+08:00  INFO 10384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:20:11.088+08:00  INFO 10384 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:20:11.222+08:00  INFO 10384 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:20:11.223+08:00  INFO 10384 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1969 ms
+2024-12-31T17:20:12.385+08:00  WARN 10384 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:20:12.921+08:00  INFO 10384 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7dc92a06, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2419a5db, org.springframework.security.web.context.SecurityContextHolderFilter@337cb81d, org.springframework.security.web.header.HeaderWriterFilter@3c82bac3, org.springframework.security.web.authentication.logout.LogoutFilter@33bfe6d3, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@45f1413c, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@78d73b1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59929ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ac3d530, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52bb3dcd, org.springframework.security.web.session.SessionManagementFilter@76104df5, org.springframework.security.web.access.ExceptionTranslationFilter@7cbfbcd1, org.springframework.security.web.access.intercept.AuthorizationFilter@675230cd]
+2024-12-31T17:20:13.245+08:00  INFO 10384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:20:13.256+08:00  INFO 10384 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 4.702 seconds (process running for 5.976)
+2024-12-31T17:20:13.258+08:00  INFO 10384 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:20:47.947+08:00  INFO 10384 --- [http-nio-8888-exec-3] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31T17:20:47.950+08:00  INFO 10384 --- [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-31T17:20:47.953+08:00  INFO 10384 --- [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-31T17:20:47.974+08:00 DEBUG 10384 --- [http-nio-8888-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:20:47.989+08:00 DEBUG 10384 --- [http-nio-8888-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:20:48.009+08:00 DEBUG 10384 --- [http-nio-8888-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:20:48.311+08:00  INFO 10384 --- [http-nio-8888-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-31T17:20:48.795+08:00  INFO 10384 --- [http-nio-8888-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73f9cba5
+2024-12-31T17:20:48.803+08:00  INFO 10384 --- [http-nio-8888-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-31T17:20:51.176+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 当前用户: anonymousUser
+2024-12-31T17:20:51.222+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志开始 =====================
+2024-12-31T17:20:51.222+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 操作描述: 登录
+2024-12-31T17:20:51.222+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 请求方法: login
+2024-12-31T17:20:51.222+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 请求参数: [LoginDTO(username=admin, password=123456)]
+2024-12-31T17:20:51.223+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 执行时长: 2908 ms
+2024-12-31T17:20:51.223+08:00  INFO 10384 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志结束 =====================
+2024-12-31T17:21:56.619+08:00  INFO 10384 --- [SpringApplicationShutdownHook] o.s.s.support.LifecycleObjectSupport     : destroy called
+2024-12-31T17:21:56.671+08:00  INFO 10384 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-31T17:21:56.715+08:00  INFO 10384 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-31T17:22:05.479+08:00  INFO 14708 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 14708 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:22:05.483+08:00  INFO 14708 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:22:06.359+08:00  INFO 14708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:22:06.362+08:00  INFO 14708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:22:06.403+08:00  INFO 14708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:22:06.953+08:00  INFO 14708 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:22:07.265+08:00  INFO 14708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:22:07.276+08:00  INFO 14708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:22:07.276+08:00  INFO 14708 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:22:07.373+08:00  INFO 14708 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:22:07.374+08:00  INFO 14708 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1831 ms
+2024-12-31T17:22:08.388+08:00  WARN 14708 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:22:08.951+08:00  INFO 14708 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79fcd194, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73d8c8d7, org.springframework.security.web.context.SecurityContextHolderFilter@6be80629, org.springframework.security.web.header.HeaderWriterFilter@998fbd4, org.springframework.security.web.authentication.logout.LogoutFilter@3e63bd6b, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@21c34bf8, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@39d77de9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10f10230, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@362b384c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@361b3ca6, org.springframework.security.web.session.SessionManagementFilter@383e6734, org.springframework.security.web.access.ExceptionTranslationFilter@56dde9f7, org.springframework.security.web.access.intercept.AuthorizationFilter@4be1dce6]
+2024-12-31T17:22:09.253+08:00  INFO 14708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:22:09.270+08:00  INFO 14708 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 4.392 seconds (process running for 5.691)
+2024-12-31T17:22:09.273+08:00  INFO 14708 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:22:29.647+08:00  INFO 14708 --- [http-nio-8888-exec-2] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31T17:22:29.647+08:00  INFO 14708 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-31T17:22:29.649+08:00  INFO 14708 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-31T17:22:29.660+08:00 DEBUG 14708 --- [http-nio-8888-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:22:29.669+08:00 DEBUG 14708 --- [http-nio-8888-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:22:29.684+08:00 DEBUG 14708 --- [http-nio-8888-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:22:29.847+08:00  INFO 14708 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-31T17:22:30.086+08:00  INFO 14708 --- [http-nio-8888-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6787bf98
+2024-12-31T17:22:30.098+08:00  INFO 14708 --- [http-nio-8888-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-31T17:22:31.149+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":-973414803,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:22:31.184+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志开始 =====================
+2024-12-31T17:22:31.184+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : 操作描述: 登录
+2024-12-31T17:22:31.184+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : 请求方法: login
+2024-12-31T17:22:31.184+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : 请求参数: [LoginDTO(username=admin, password=123456)]
+2024-12-31T17:22:31.184+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : 执行时长: 1319 ms
+2024-12-31T17:22:31.184+08:00  INFO 14708 --- [http-nio-8888-exec-2] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志结束 =====================
+2024-12-31T17:24:17.838+08:00 DEBUG 14708 --- [http-nio-8888-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:24:42.920+08:00 DEBUG 14708 --- [http-nio-8888-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:24:42.961+08:00 DEBUG 14708 --- [http-nio-8888-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:24:44.968+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":-973414803,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:24:44.991+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志开始 =====================
+2024-12-31T17:24:44.993+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : 操作描述: 登录
+2024-12-31T17:24:44.994+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : 请求方法: login
+2024-12-31T17:24:44.996+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : 请求参数: [LoginDTO(username=admin, password=123456)]
+2024-12-31T17:24:44.997+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : 执行时长: 1953 ms
+2024-12-31T17:24:44.998+08:00  INFO 14708 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志结束 =====================
+2024-12-31T17:26:58.023+08:00 DEBUG 14708 --- [http-nio-8888-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:26:58.025+08:00 DEBUG 14708 --- [http-nio-8888-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:26:58.026+08:00 DEBUG 14708 --- [http-nio-8888-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:26:58.135+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":-973414803,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:27:46.516+08:00  WARN 14708 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s555ms367µs900ns).
+2024-12-31T17:28:03.990+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志开始 =====================
+2024-12-31T17:28:03.991+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : 操作描述: 登录
+2024-12-31T17:28:03.992+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : 请求方法: login
+2024-12-31T17:28:03.993+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : 请求参数: [LoginDTO(username=admin, password=123456)]
+2024-12-31T17:28:03.994+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : 执行时长: 106 ms
+2024-12-31T17:28:03.995+08:00  INFO 14708 --- [http-nio-8888-exec-8] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志结束 =====================
+2024-12-31T17:42:52.637+08:00  INFO 14708 --- [SpringApplicationShutdownHook] o.s.s.support.LifecycleObjectSupport     : destroy called
+2024-12-31T17:42:52.764+08:00  INFO 14708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-31T17:42:52.918+08:00  INFO 14708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-31T17:43:02.307+08:00  INFO 22996 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 22996 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:43:02.311+08:00  INFO 22996 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:43:03.298+08:00  INFO 22996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:43:03.303+08:00  INFO 22996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:43:03.393+08:00  INFO 22996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:43:04.152+08:00  INFO 22996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:43:04.634+08:00  INFO 22996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:43:04.647+08:00  INFO 22996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:43:04.647+08:00  INFO 22996 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:43:04.761+08:00  INFO 22996 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:43:04.761+08:00  INFO 22996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2393 ms
+2024-12-31T17:43:05.942+08:00  WARN 22996 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:43:06.579+08:00  INFO 22996 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73d8c8d7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@361b3ca6, org.springframework.security.web.context.SecurityContextHolderFilter@20a4cba7, org.springframework.security.web.header.HeaderWriterFilter@30333941, org.springframework.security.web.authentication.logout.LogoutFilter@48144f1a, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@21c34bf8, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@696fad31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dec769, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@433b546f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48333b12, org.springframework.security.web.session.SessionManagementFilter@336070ab, org.springframework.security.web.access.ExceptionTranslationFilter@4b2acb12, org.springframework.security.web.access.intercept.AuthorizationFilter@206bd7a0]
+2024-12-31T17:43:06.992+08:00  INFO 22996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:43:07.003+08:00  INFO 22996 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 5.345 seconds (process running for 6.616)
+2024-12-31T17:43:07.007+08:00  INFO 22996 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:43:53.900+08:00  INFO 22996 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31T17:43:53.901+08:00  INFO 22996 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-31T17:43:53.903+08:00  INFO 22996 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-31T17:43:53.914+08:00 DEBUG 22996 --- [http-nio-8888-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:43:53.922+08:00 DEBUG 22996 --- [http-nio-8888-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:43:53.939+08:00 DEBUG 22996 --- [http-nio-8888-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:43:54.122+08:00  INFO 22996 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-31T17:43:54.326+08:00  INFO 22996 --- [http-nio-8888-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3bd4f534
+2024-12-31T17:43:54.330+08:00  INFO 22996 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-31T17:43:55.306+08:00  INFO 22996 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":665450583,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:44:25.645+08:00 ERROR 22996 --- [http-nio-8888-exec-1] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:44:25.647+08:00 ERROR 22996 --- [http-nio-8888-exec-1] c.g.o.r.e.GlobalExceptionHandler         : 系统异常：
+### Error updating database.  Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+### The error may exist in com/gaog/orderingapplets/restaurant/mapper/SystemLogMapper.java (best guess)
+### The error may involve com.gaog.orderingapplets.restaurant.mapper.SystemLogMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO system_logs  ( operation_description, method_name, request_params, execution_time,  operator_email )  VALUES  ( ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+; Field 'operator_name' doesn't have a default value
+2024-12-31T17:44:25.647+08:00 ERROR 22996 --- [http-nio-8888-exec-1] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:44:47.918+08:00 DEBUG 22996 --- [http-nio-8888-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:44:47.918+08:00 DEBUG 22996 --- [http-nio-8888-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:44:47.920+08:00 DEBUG 22996 --- [http-nio-8888-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:44:48.029+08:00  INFO 22996 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":665450583,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:45:10.316+08:00 ERROR 22996 --- [http-nio-8888-exec-3] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:45:10.316+08:00 ERROR 22996 --- [http-nio-8888-exec-3] c.g.o.r.e.GlobalExceptionHandler         : 系统异常：
+### Error updating database.  Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+### The error may exist in com/gaog/orderingapplets/restaurant/mapper/SystemLogMapper.java (best guess)
+### The error may involve com.gaog.orderingapplets.restaurant.mapper.SystemLogMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO system_logs  ( operation_description, method_name, request_params, execution_time,  operator_email )  VALUES  ( ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+; Field 'operator_name' doesn't have a default value
+2024-12-31T17:45:10.316+08:00 ERROR 22996 --- [http-nio-8888-exec-3] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:48:29.123+08:00 DEBUG 22996 --- [http-nio-8888-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:48:29.125+08:00 DEBUG 22996 --- [http-nio-8888-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:48:29.126+08:00 DEBUG 22996 --- [http-nio-8888-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:48:29.252+08:00  INFO 22996 --- [http-nio-8888-exec-5] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":665450583,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:49:10.233+08:00 ERROR 22996 --- [http-nio-8888-exec-5] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:49:10.233+08:00 ERROR 22996 --- [http-nio-8888-exec-5] c.g.o.r.e.GlobalExceptionHandler         : 系统异常：
+### Error updating database.  Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+### The error may exist in com/gaog/orderingapplets/restaurant/mapper/SystemLogMapper.java (best guess)
+### The error may involve com.gaog.orderingapplets.restaurant.mapper.SystemLogMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO system_logs  ( operation_description, method_name, request_params, execution_time,  operator_email )  VALUES  ( ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+; Field 'operator_name' doesn't have a default value
+2024-12-31T17:49:10.235+08:00 ERROR 22996 --- [http-nio-8888-exec-5] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:50:14.882+08:00  INFO 22996 --- [SpringApplicationShutdownHook] o.s.s.support.LifecycleObjectSupport     : destroy called
+2024-12-31T17:50:15.183+08:00  INFO 22996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-31T17:50:15.567+08:00  INFO 22996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-31T17:50:24.432+08:00  INFO 26324 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 26324 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:50:24.434+08:00  INFO 26324 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:50:25.265+08:00  INFO 26324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:50:25.267+08:00  INFO 26324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:50:25.308+08:00  INFO 26324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:50:25.962+08:00  INFO 26324 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:50:26.294+08:00  INFO 26324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:50:26.304+08:00  INFO 26324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:50:26.304+08:00  INFO 26324 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:50:26.402+08:00  INFO 26324 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:50:26.402+08:00  INFO 26324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1919 ms
+2024-12-31T17:50:27.432+08:00  WARN 26324 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:50:28.015+08:00  INFO 26324 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79fcd194, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73d8c8d7, org.springframework.security.web.context.SecurityContextHolderFilter@6be80629, org.springframework.security.web.header.HeaderWriterFilter@998fbd4, org.springframework.security.web.authentication.logout.LogoutFilter@3e63bd6b, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@21c34bf8, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@39d77de9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10f10230, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@362b384c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@361b3ca6, org.springframework.security.web.session.SessionManagementFilter@383e6734, org.springframework.security.web.access.ExceptionTranslationFilter@56dde9f7, org.springframework.security.web.access.intercept.AuthorizationFilter@4be1dce6]
+2024-12-31T17:50:28.413+08:00  INFO 26324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:50:28.422+08:00  INFO 26324 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 4.596 seconds (process running for 6.0)
+2024-12-31T17:50:28.424+08:00  INFO 26324 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:50:47.996+08:00  INFO 26324 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31T17:50:47.997+08:00  INFO 26324 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-31T17:50:48.000+08:00  INFO 26324 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-31T17:50:48.011+08:00 DEBUG 26324 --- [http-nio-8888-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:50:48.022+08:00 DEBUG 26324 --- [http-nio-8888-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:50:48.042+08:00 DEBUG 26324 --- [http-nio-8888-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:50:48.379+08:00  INFO 26324 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-31T17:50:48.637+08:00  INFO 26324 --- [http-nio-8888-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33e8c272
+2024-12-31T17:50:48.659+08:00  INFO 26324 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-31T17:50:49.586+08:00  INFO 26324 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":-1700042358,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:50:52.408+08:00  WARN 26324 --- [http-nio-8888-exec-1] c.g.o.restaurant.util.JsonUtil           : 未找到键: username
+2024-12-31T17:50:52.492+08:00 ERROR 26324 --- [http-nio-8888-exec-1] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:50:52.493+08:00 ERROR 26324 --- [http-nio-8888-exec-1] c.g.o.r.e.GlobalExceptionHandler         : 系统异常：
+### Error updating database.  Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+### The error may exist in com/gaog/orderingapplets/restaurant/mapper/SystemLogMapper.java (best guess)
+### The error may involve com.gaog.orderingapplets.restaurant.mapper.SystemLogMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO system_logs  ( operation_description, method_name, request_params, execution_time,  operator_email )  VALUES  ( ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+; Field 'operator_name' doesn't have a default value
+2024-12-31T17:50:52.493+08:00 ERROR 26324 --- [http-nio-8888-exec-1] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:51:18.386+08:00 DEBUG 26324 --- [http-nio-8888-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:51:18.387+08:00 DEBUG 26324 --- [http-nio-8888-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:51:18.388+08:00 DEBUG 26324 --- [http-nio-8888-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:51:18.497+08:00  INFO 26324 --- [http-nio-8888-exec-3] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":-1700042358,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:51:52.139+08:00  WARN 26324 --- [http-nio-8888-exec-3] c.g.o.restaurant.util.JsonUtil           : 未找到键: username
+2024-12-31T17:51:52.143+08:00 ERROR 26324 --- [http-nio-8888-exec-3] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:51:52.144+08:00 ERROR 26324 --- [http-nio-8888-exec-3] c.g.o.r.e.GlobalExceptionHandler         : 系统异常：
+### Error updating database.  Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+### The error may exist in com/gaog/orderingapplets/restaurant/mapper/SystemLogMapper.java (best guess)
+### The error may involve com.gaog.orderingapplets.restaurant.mapper.SystemLogMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO system_logs  ( operation_description, method_name, request_params, execution_time,  operator_email )  VALUES  ( ?, ?, ?, ?,  ? )
+### Cause: java.sql.SQLException: Field 'operator_name' doesn't have a default value
+; Field 'operator_name' doesn't have a default value
+2024-12-31T17:51:52.144+08:00 ERROR 26324 --- [http-nio-8888-exec-3] c.g.o.r.e.GlobalExceptionHandler         : ===========================系统异常=========================
+2024-12-31T17:52:49.027+08:00  INFO 26324 --- [SpringApplicationShutdownHook] o.s.s.support.LifecycleObjectSupport     : destroy called
+2024-12-31T17:52:49.077+08:00  INFO 26324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-31T17:52:49.243+08:00  INFO 26324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-31T17:53:02.976+08:00  INFO 25408 --- [main] c.g.o.OrderingAppletsApplication         : Starting OrderingAppletsApplication using Java 17.0.8 with PID 25408 (D:\Projects\2p\practice\OrderingApplets\target\classes started by Plus maintenant in D:\Projects\2p\practice\OrderingApplets)
+2024-12-31T17:53:02.978+08:00  INFO 25408 --- [main] c.g.o.OrderingAppletsApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-12-31T17:53:03.931+08:00  INFO 25408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-31T17:53:03.933+08:00  INFO 25408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-31T17:53:03.970+08:00  INFO 25408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2024-12-31T17:53:04.618+08:00  INFO 25408 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-12-31T17:53:05.049+08:00  INFO 25408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2024-12-31T17:53:05.062+08:00  INFO 25408 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-31T17:53:05.062+08:00  INFO 25408 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-12-31T17:53:05.184+08:00  INFO 25408 --- [main] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring embedded WebApplicationContext
+2024-12-31T17:53:05.184+08:00  INFO 25408 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2160 ms
+2024-12-31T17:53:06.797+08:00  WARN 25408 --- [main] c.b.m.core.injector.AbstractMethod       : [com.gaog.orderingapplets.restaurant.mapper.ProductMapper.selectPage] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.SelectPage]
+2024-12-31T17:53:07.458+08:00  INFO 25408 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52c6e959, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b475742, org.springframework.security.web.context.SecurityContextHolderFilter@414d2821, org.springframework.security.web.header.HeaderWriterFilter@4e9bd2c8, org.springframework.security.web.authentication.logout.LogoutFilter@3be50b2c, com.gaog.orderingapplets.restaurant.security.JwtAuthenticationFilter@77f03916, com.gaog.orderingapplets.restaurant.security.CustomAuthorizationFilter@2c06b113, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6694fb1b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d8fd373, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@323c6f9c, org.springframework.security.web.session.SessionManagementFilter@5edd9b4f, org.springframework.security.web.access.ExceptionTranslationFilter@337cb81d, org.springframework.security.web.access.intercept.AuthorizationFilter@9de1b85]
+2024-12-31T17:53:07.828+08:00  INFO 25408 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path '/OrderingApplets'
+2024-12-31T17:53:07.840+08:00  INFO 25408 --- [main] c.g.o.OrderingAppletsApplication         : Started OrderingAppletsApplication in 5.352 seconds (process running for 6.853)
+2024-12-31T17:53:07.843+08:00  INFO 25408 --- [main] c.g.o.OrderingAppletsApplication         :  ============> 项目地址：http://localhost:8888/OrderingApplets
+2024-12-31T17:53:31.051+08:00  INFO 25408 --- [http-nio-8888-exec-1] o.a.c.c.C.[.[.[/OrderingApplets]         : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-31T17:53:31.052+08:00  INFO 25408 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-31T17:53:31.054+08:00  INFO 25408 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-31T17:53:31.068+08:00 DEBUG 25408 --- [http-nio-8888-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2024-12-31T17:53:31.091+08:00 DEBUG 25408 --- [http-nio-8888-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-31T17:53:31.111+08:00 DEBUG 25408 --- [http-nio-8888-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+2024-12-31T17:53:31.343+08:00  INFO 25408 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-31T17:53:31.611+08:00  INFO 25408 --- [http-nio-8888-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c4e842a
+2024-12-31T17:53:31.615+08:00  INFO 25408 --- [http-nio-8888-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-31T17:53:33.487+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 当前用户: {"authenticated":true,"authorities":[{"authority":"ROLE_ANONYMOUS"}],"credentials":"","details":{"remoteAddress":"0:0:0:0:0:0:0:1"},"keyHash":-859738171,"name":"anonymousUser","principal":"anonymousUser"}
+2024-12-31T17:54:01.068+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志开始 =====================
+2024-12-31T17:54:01.070+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 操作描述: 登录
+2024-12-31T17:54:01.071+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 请求方法: login
+2024-12-31T17:54:01.072+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 请求参数: [LoginDTO(username=admin, password=123456)]
+2024-12-31T17:54:01.073+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : 执行时长: 2157 ms
+2024-12-31T17:54:01.075+08:00  INFO 25408 --- [http-nio-8888-exec-1] c.g.o.restaurant.aspect.LogAspect        : ===================== 操作日志结束 =====================
+2024-12-31T17:54:58.546+08:00  INFO 25408 --- [SpringApplicationShutdownHook] o.s.s.support.LifecycleObjectSupport     : destroy called
