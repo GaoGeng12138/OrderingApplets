@@ -4,6 +4,7 @@ import com.gaog.orderingapplets.restaurant.dto.cartItem.CartItemDTO;
 import com.gaog.orderingapplets.restaurant.entity.Cart;
 import com.gaog.orderingapplets.restaurant.entity.CartItem;
 import com.gaog.orderingapplets.restaurant.entity.Product;
+import com.gaog.orderingapplets.restaurant.enums.ResponseCode;
 import com.gaog.orderingapplets.restaurant.exception.BusinessException;
 import com.gaog.orderingapplets.restaurant.mapper.CartItemMapper;
 import com.gaog.orderingapplets.restaurant.mapper.CartMapper;
@@ -42,12 +43,12 @@ public class CartServiceImpl implements CartService {
         // 检查商品是否存在
         Product product = productMapper.selectById(itemDTO.getProductId());
         if (product == null) {
-            throw new BusinessException("商品不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_PRODUCT);
         }
 
         // 检查库存
         if (product.getStock() < itemDTO.getQuantity()) {
-            throw new BusinessException("商品库存不足");
+            throw new BusinessException(ResponseCode.ERROR_INSUFFICIENT_PRODUCT);
         }
 
         // 检查购物车是否已有该商品
@@ -73,13 +74,13 @@ public class CartServiceImpl implements CartService {
     public void updateQuantity(Long itemId, Integer quantity) {
         CartItem cartItem = cartItemMapper.selectById(itemId);
         if (cartItem == null) {
-            throw new BusinessException("购物车项不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_CARTITEM);
         }
 
         // 检查库存
         Product product = productMapper.selectById(cartItem.getProductId());
         if (product.getStock() < quantity) {
-            throw new BusinessException("商品库存不足");
+            throw new BusinessException(ResponseCode.ERROR_INSUFFICIENT_PRODUCT);
         }
 
         cartItem.setQuantity(quantity);

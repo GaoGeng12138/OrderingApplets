@@ -9,6 +9,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * 功能描述: 角色
  *
@@ -32,14 +34,22 @@ public class Role {
     @TableField("description")
     private String description;
 
+    /**
+     * 功能描述: 是否启用 0-禁用 1-启用
+     */
     @TableField("is_active")
     private Boolean isActive;
+
+    /**
+     * 功能描述: 是否删除 0-未删除 1-已删除
+     */
+
     @TableField("is_deleted")
-    private Boolean isDeleted;
+    private Integer isDeleted;
 
     @TableField("created_at")
-    private String createdAt;
+    private Date createdAt;
 
     @TableField("updated_at")
-    private String updatedAt;
+    private Date updatedAt;
 } 

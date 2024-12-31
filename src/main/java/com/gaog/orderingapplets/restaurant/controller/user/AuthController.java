@@ -56,4 +56,16 @@ public class AuthController {
     public Result<Map<String, String>> login(@RequestBody @Valid LoginDTO loginDTO) {
         return userService.login(loginDTO);
     }
-} 
+
+    /**
+     * 功能描述： 登出
+     *
+     * @return
+     */
+    @PostMapping("/logout")
+    public Result<String> logout() {
+        return Result.success("登出成功");
+    }
+
+
+}

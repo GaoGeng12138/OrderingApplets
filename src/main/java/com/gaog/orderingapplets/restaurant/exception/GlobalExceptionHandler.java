@@ -1,7 +1,7 @@
 package com.gaog.orderingapplets.restaurant.exception;
 
 import com.gaog.orderingapplets.restaurant.common.Result;
-import com.gaog.orderingapplets.restaurant.constant.ResponseCode;
+import com.gaog.orderingapplets.restaurant.enums.ResponseCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.security.sasl.AuthenticationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class GlobalExceptionHandler {
         log.error("===========================支付异常=========================");
         log.error("支付异常：{}", e.getMessage());
         log.error("===========================支付异常=========================");
-        return Result.error(e.getErrorCode(), e.getErrorMsg());
+        return Result.error(e.getErrorCode(), e.getErrorMsg(), null);
     }
 
 
@@ -44,9 +45,8 @@ public class GlobalExceptionHandler {
         log.error("===========================系统异常=========================");
         log.error("系统异常：{}", e.getMessage());
         log.error("===========================系统异常=========================");
-        return Result.error(ResponseCode.SYSTEM_ERROR.getCode(), ResponseCode.SYSTEM_ERROR.getMessage());
+        return Result.error(ResponseCode.SYSTEM_ERROR.getCode(), ResponseCode.SYSTEM_ERROR.getMessage(), null);
     }
-
 
     /**
      * 功能描述： 处理业务异常
@@ -60,7 +60,7 @@ public class GlobalExceptionHandler {
         log.error("===========================业务异常=========================");
         log.error("业务异常：{}", e.getMessage());
         log.error("===========================业务异常=========================");
-        return Result.error(e.getErrorCode(), e.getMessage());
+        return Result.error(e.getErrorCode(), e.getMessage(), null);
     }
 
 
@@ -81,8 +81,18 @@ public class GlobalExceptionHandler {
         );
         log.error("参数错误：{}", errors);
         log.error("===========================校验参数异常=========================");
-        return Result.error(ResponseCode.PARAM_ERROR.getCode(), ResponseCode.PARAM_ERROR.getMessage(), errors);
+        return Result.error(ResponseCode.PARAM_ERROR.getCode(), ResponseCode.PARAM_ERROR.getMessage() + ": " + errors, null);
     }
 
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public Result<Map<String, String>> handleAuthenticationException(AuthenticationException ex) {
+        log.error("===========================认证异常=========================");
+        log.error("认证异常：{}", ex.getMessage());
+        log.error("===========================认证异常=========================");
+        Map<String, String> errors = new HashMap<>();
+        errors.put("error", ex.getMessage());
+        return Result.error(HttpStatus.FORBIDDEN.value(), HttpStatus.FORBIDDEN.getReasonPhrase() + ": " + errors, null);
+    }
 
 } 

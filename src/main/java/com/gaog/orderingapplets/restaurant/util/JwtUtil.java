@@ -1,6 +1,9 @@
 package com.gaog.orderingapplets.restaurant.util;
 
 
+import com.alibaba.fastjson.JSON;
+import com.gaog.orderingapplets.restaurant.constant.CacheConstant;
+import com.gaog.orderingapplets.restaurant.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
@@ -8,7 +11,6 @@ import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -35,10 +37,10 @@ public class JwtUtil {
 
     private Key key;
 
-    private final RedisTemplate<String, String> redisTemplate;
+    private final RedisUtil redisUtil;
 
-    public JwtUtil(RedisTemplate<String, String> redisTemplate) {
-        this.redisTemplate = redisTemplate;
+    public JwtUtil(RedisUtil redisUtil) {
+        this.redisUtil = redisUtil;
     }
 
     @PostConstruct
@@ -49,24 +51,24 @@ public class JwtUtil {
     /**
      * 功能描述： 生成令牌
      *
-     * @param username 用户名
+     * @param user 用户
      * @return {@code String }
      * @Author： ZSJ
      */
-    public String generateToken(String username) {
+    public String generateToken(User user) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + expiration * 1000);
 
 
         String token = Jwts.builder()
-                .setSubject(username)
+                .setSubject(user.getUsername())
                 .setIssuedAt(now)
                 .setExpiration(expiryDate)
                 .signWith(key)
                 .compact();
 
         // 将 token 存储到 Redis 中，设置过期时间
-        redisTemplate.opsForValue().set(token, username, expiration, TimeUnit.SECONDS);
+        redisUtil.set(CacheConstant.USER_CACHE_KEY + token, JSON.toJSONString(user), expiration, TimeUnit.SECONDS);
 
         return token;
     }
@@ -98,7 +100,7 @@ public class JwtUtil {
     public boolean validateToken(String token) {
         try {
             // 检查 token 是否在 Redis 中存在
-            if (redisTemplate.opsForValue().get(token) == null) {
+            if (redisUtil.get(CacheConstant.USER_CACHE_KEY + token) == null) {
                 // Token 不存在
                 return false;
             }
@@ -113,8 +115,14 @@ public class JwtUtil {
         }
     }
 
+    /**
+     * 功能描述： 使令牌失效
+     *
+     * @param token 令 牌
+     * @Author： ZSJ
+     */
     public void invalidateToken(String token) {
         // 从 Redis 中删除 token
-        redisTemplate.delete(token);
+        redisUtil.delete(CacheConstant.USER_CACHE_KEY + token);
     }
 } 

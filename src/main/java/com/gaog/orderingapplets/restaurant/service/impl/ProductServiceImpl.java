@@ -9,9 +9,11 @@ import com.gaog.orderingapplets.restaurant.dto.product.ProductCreateDTO;
 import com.gaog.orderingapplets.restaurant.dto.product.ProductQueryDTO;
 import com.gaog.orderingapplets.restaurant.dto.product.ProductUpdateDTO;
 import com.gaog.orderingapplets.restaurant.entity.Product;
+import com.gaog.orderingapplets.restaurant.enums.ResponseCode;
 import com.gaog.orderingapplets.restaurant.exception.BusinessException;
 import com.gaog.orderingapplets.restaurant.mapper.ProductMapper;
 import com.gaog.orderingapplets.restaurant.service.ProductService;
+import com.gaog.orderingapplets.restaurant.util.RedisUtil;
 import com.gaog.orderingapplets.restaurant.vo.ProductVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -42,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductMapper productMapper;
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisUtil redisUtil;
 
 
     /**
@@ -84,15 +86,15 @@ public class ProductServiceImpl implements ProductService {
     public ProductVO getDetail(Long id) {
         // 先从缓存获取
         String key = CacheConstant.PRODUCT_CACHE_KEY + id;
-        Product product = (Product) redisTemplate.opsForValue().get(key);
+        Product product = (Product) redisUtil.get(key);
 
         if (product == null) {
             product = productMapper.selectById(id);
             if (product == null) {
-                throw new BusinessException("商品不存在");
+                throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_PRODUCT);
             }
             // 放入缓存
-            redisTemplate.opsForValue().set(key, product, 1, TimeUnit.HOURS);
+            redisUtil.set(key, product, 1, TimeUnit.HOURS);
         }
 
         return convertToVO(product);
@@ -113,7 +115,7 @@ public class ProductServiceImpl implements ProductService {
         product.setUpdatedAt(new Date());
         int insert = productMapper.insert(product);
         if (insert == 0) {
-            throw new BusinessException("新增商品失败");
+            throw new BusinessException(ResponseCode.ERROR_ADD_PRODUCT);
         }
         return insert;
     }
@@ -129,14 +131,14 @@ public class ProductServiceImpl implements ProductService {
     public void update(ProductUpdateDTO updateDTO) {
         Product product = productMapper.selectById(updateDTO.getId());
         if (product == null) {
-            throw new BusinessException("商品不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_PRODUCT);
         }
 
         BeanUtils.copyProperties(updateDTO, product);
         productMapper.updateById(product);
 
         // 清除缓存
-        redisTemplate.delete(CacheConstant.PRODUCT_CACHE_KEY + product.getId());
+        redisUtil.delete(CacheConstant.PRODUCT_CACHE_KEY + product.getId());
     }
 
     /**
@@ -149,7 +151,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional(rollbackFor = Exception.class)
     public void delete(Long id) {
         productMapper.deleteById(id);
-        redisTemplate.delete(CacheConstant.PRODUCT_CACHE_KEY + id);
+        redisUtil.delete(CacheConstant.PRODUCT_CACHE_KEY + id);
     }
 
     /**
@@ -164,9 +166,9 @@ public class ProductServiceImpl implements ProductService {
     public void updateStock(Long id, Integer stock) {
         int rows = productMapper.updateStock(id, stock);
         if (rows == 0) {
-            throw new BusinessException("库存不足");
+            throw new BusinessException(ResponseCode.ERROR_INSUFFICIENT_PRODUCT);
         }
-        redisTemplate.delete(CacheConstant.PRODUCT_CACHE_KEY + id);
+        redisUtil.delete(CacheConstant.PRODUCT_CACHE_KEY + id);
     }
 
     /**

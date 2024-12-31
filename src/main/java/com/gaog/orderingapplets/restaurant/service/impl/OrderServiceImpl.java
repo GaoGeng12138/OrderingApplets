@@ -9,6 +9,7 @@ import com.gaog.orderingapplets.restaurant.dto.order.OrderQueryDTO;
 import com.gaog.orderingapplets.restaurant.entity.Order;
 import com.gaog.orderingapplets.restaurant.entity.OrderItem;
 import com.gaog.orderingapplets.restaurant.enums.OrderStatus;
+import com.gaog.orderingapplets.restaurant.enums.ResponseCode;
 import com.gaog.orderingapplets.restaurant.exception.BusinessException;
 import com.gaog.orderingapplets.restaurant.mapper.OrderItemMapper;
 import com.gaog.orderingapplets.restaurant.mapper.OrderMapper;
@@ -93,11 +94,11 @@ public class OrderServiceImpl implements OrderService {
     public void cancel(Long orderId) {
         Order order = orderMapper.selectById(orderId);
         if (order == null) {
-            throw new BusinessException("订单不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_ORDER);
         }
 
         if (!OrderStatus.PENDING.name().equals(order.getStatus())) {
-            throw new BusinessException("订单状态不允许取消");
+            throw new BusinessException(ResponseCode.ERROR_CANCEL_ORDER);
         }
 
         order.setStatus(OrderStatus.CANCELLED.name());
@@ -115,11 +116,11 @@ public class OrderServiceImpl implements OrderService {
     public void pay(Long orderId) {
         Order order = orderMapper.selectById(orderId);
         if (order == null) {
-            throw new BusinessException("订单不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_ORDER);
         }
 
         if (!OrderStatus.PENDING.name().equals(order.getStatus())) {
-            throw new BusinessException("订单状态不正确");
+            throw new BusinessException(ResponseCode.ERROR_CANCEL_ORDER);
         }
 
         order.setStatus(OrderStatus.PAID.name());
@@ -130,7 +131,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderVO getDetail(Long orderId) {
         OrderVO orderVO = orderMapper.selectOrderDetail(orderId);
         if (orderVO == null) {
-            throw new BusinessException("订单不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_ORDER);
         }
 
         List<OrderItemVO> items = orderItemMapper.selectByOrderId(orderId);
@@ -166,7 +167,7 @@ public class OrderServiceImpl implements OrderService {
     public void updateStatus(Long orderId, String status) {
         Order order = orderMapper.selectById(orderId);
         if (order == null) {
-            throw new BusinessException("订单不存在");
+            throw new BusinessException(ResponseCode.ERROR_NOT_EXIST_ORDER);
         }
         
         // 检查状态转换是否合法
@@ -193,7 +194,7 @@ public class OrderServiceImpl implements OrderService {
         // 实现订单状态转换的业务规则
         if (OrderStatus.CANCELLED.name().equals(currentStatus) ||
             OrderStatus.COMPLETED.name().equals(currentStatus)) {
-            throw new BusinessException("当前订单状态不允许修改");
+            throw new BusinessException(ResponseCode.ERROR_CANCEL_ORDER);
         }
 
     }

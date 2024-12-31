@@ -38,7 +38,6 @@ logging:
   level:
     com.restaurant: info
     org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
   file:
     name: logs/restaurant.log 
 #####################################安全配置########################################

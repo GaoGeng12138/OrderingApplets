@@ -2,6 +2,8 @@ package com.gaog.orderingapplets.restaurant.exception;
 
 import lombok.Getter;
 
+import java.io.Serial;
+
 /**
  * 功能描述: 付款异常
  *
@@ -12,8 +14,11 @@ import lombok.Getter;
  */
 @Getter
 public class PaymentException extends RuntimeException {
-    
-    private String errorCode;
+
+    @Serial
+    private static final long serialVersionUID = -1052600973441555455L;
+
+    private int errorCode;
     private String errorMsg;
     
     public PaymentException(String message) {
@@ -21,7 +26,7 @@ public class PaymentException extends RuntimeException {
         this.errorMsg = message;
     }
     
-    public PaymentException(String errorCode, String errorMsg) {
+    public PaymentException(int errorCode, String errorMsg) {
         super(errorMsg);
         this.errorCode = errorCode;
         this.errorMsg = errorMsg;

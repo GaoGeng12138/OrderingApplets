@@ -1,5 +1,6 @@
 package com.gaog.orderingapplets.restaurant.exception;
 
+import com.gaog.orderingapplets.restaurant.enums.ResponseCode;
 import lombok.Data;
 
 /**
@@ -12,22 +13,18 @@ import lombok.Data;
  */
 @Data
 public class BusinessException extends RuntimeException {
-    private String errorCode;
-    private String errorMsg;
 
-    public BusinessException(String message) {
-        super(message);
-        this.errorMsg = message;
+    private static final long serialVersionUID = 3488143909118951900L;
+
+    private int errorCode;
+
+    public BusinessException(ResponseCode responseCode) {
+        super(responseCode.getMessage());
+        this.errorCode = responseCode.getCode();
     }
 
-    public BusinessException(String errorCode, String errorMsg) {
+    public BusinessException(ResponseCode responseCode, String errorMsg) {
         super(errorMsg);
-        this.errorCode = errorCode;
-        this.errorMsg = errorMsg;
-    }
-
-    public BusinessException(String message, Throwable cause) {
-        super(message, cause);
-        this.errorMsg = message;
+        this.errorCode = responseCode.getCode();
     }
 }

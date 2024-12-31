@@ -12,6 +12,14 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
+/**
+ * 功能描述: 对数方面
+ *
+ * @CLASSNAME： LogAspect
+ * @VERSION: 1.0.0
+ * @Date：2024/12/17
+ * @Author： ZSJ
+ */
 @Aspect
 @Component
 @Slf4j
@@ -19,7 +27,15 @@ public class LogAspect {
     
     @Pointcut("@annotation(com.gaog.orderingapplets.restaurant.annotation.SystemLog)")
     public void logPointcut() {}
-    
+
+    /**
+     * 功能描述： 周围
+     *
+     * @param point 点
+     * @return {@code Object }
+     * @throws Throwable 可投掷
+     * @Author： ZSJ
+     */
     @Around("logPointcut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         long beginTime = System.currentTimeMillis();
@@ -29,7 +45,14 @@ public class LogAspect {
         recordLog(point, time);
         return result;
     }
-    
+
+    /**
+     * 功能描述： 记录日志
+     *
+     * @param point 点
+     * @param time  时间
+     * @Author： ZSJ
+     */
     private void recordLog(ProceedingJoinPoint point, long time) {
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();

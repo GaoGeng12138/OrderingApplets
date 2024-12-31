@@ -7,6 +7,7 @@ import com.gaog.orderingapplets.restaurant.dto.user.UserRegisterDTO;
 import com.gaog.orderingapplets.restaurant.dto.user.UserUpdateDTO;
 import com.gaog.orderingapplets.restaurant.vo.UserVO;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -42,7 +43,7 @@ public interface UserService {
      * @return {@code UserVO }
      * @Author： ZSJ
      */
-    UserVO getUserInfo(Long userId);
+    Result<UserVO> getUserInfo(Long userId);
 
     /**
      * 功能描述： 更新用户信息
@@ -50,7 +51,7 @@ public interface UserService {
      * @param updateDTO 更新 DTO
      * @Author： ZSJ
      */
-    void updateUserInfo(UserUpdateDTO updateDTO);
+    Result<Boolean> updateUserInfo(UserUpdateDTO updateDTO);
 
     /**
      * 功能描述： 更改密码
@@ -58,5 +59,12 @@ public interface UserService {
      * @param passwordDTO 密码 DTO
      * @Author： ZSJ
      */
-    void changePassword(PasswordChangeDTO passwordDTO);
-} 
+    Result<Boolean> changePassword(PasswordChangeDTO passwordDTO);
+
+    /**
+     * 获取所有的用户
+     *
+     * @return
+     */
+    Result<List<UserVO>> getAllUsers();
+}

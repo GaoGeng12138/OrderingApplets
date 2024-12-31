@@ -5,45 +5,42 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 /**
- * 功能描述: 用户
+ * 功能描述: 用户角色
  *
- * @CLASSNAME： User
+ * @CLASSNAME： UserRole
  * @VERSION: 1.0.0
- * @Date：2024/12/17
+ * @Date：2024/12/18
  * @Author： ZSJ
  */
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("users")
-public class User {
+@TableName("user_roles")
+public class UserRole {
+
     @TableId(type = IdType.AUTO)
     private Long id;
-    private String username;
-    private String email;
-    private String password;
-    /**
-     * 功能描述: 是否启用 0-禁用 1-启用
-     */
-    @TableField("is_active")
-    private Boolean isActive;
 
-    /**
-     * 功能描述: 是否删除 0-未删除 1-已删除
-     */
+    @TableField("user_id")
+    private Long userId;
 
-    @TableField("is_deleted")
-    private Integer isDeleted;
+    @TableField("role_id")
+    private Long roleId;
+
     @TableField("created_at")
     private Date createdAt;
+
     @TableField("updated_at")
     private Date updatedAt;
+
+    public UserRole(Long userId, Long roleId) {
+        this.userId = userId;
+        this.roleId = roleId;
+    }
 } 

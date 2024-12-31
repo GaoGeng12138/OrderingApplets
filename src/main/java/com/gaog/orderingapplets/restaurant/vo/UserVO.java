@@ -18,6 +18,8 @@ public class UserVO {
     private String username;
     private String email;
     private String password;
+    private Integer isActive;
+    private Integer isDeleted;
     private Date createdAt;
     private Date updatedAt;
 

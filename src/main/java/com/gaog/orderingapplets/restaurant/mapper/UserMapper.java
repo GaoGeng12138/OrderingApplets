@@ -13,7 +13,7 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 根据用户名查询用户
      */
-    @Select("SELECT * FROM users WHERE username = #{username}")
+    @Select("SELECT id, username, email, password,created_at, updated_at FROM users WHERE username = #{username}")
     User selectByUsername(String username);
 
     /**
@@ -33,4 +33,15 @@ public interface UserMapper extends BaseMapper<User> {
      */
     @Update("UPDATE users SET password = #{password} WHERE id = #{id}")
     int updatePassword(@Param("id") Long id, @Param("password") String password);
+
+
+    /**
+     * 功能描述： 按 User ID 选择全部
+     *
+     * @param userId 用户 ID
+     * @return {@code User }
+     * @Author： ZSJ
+     */
+    @Select("SELECT id, username, email, password, created_at, updated_at FROM users WHERE id = #{id}")
+    User selectAllByUserId(Long userId);
 } 
