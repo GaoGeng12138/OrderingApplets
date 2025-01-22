@@ -49,7 +49,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/api/auth/register", "/api/auth/login").permitAll()
+                        auth.requestMatchers("/api/auth/**", "/api/user/**").permitAll()
                                 .requestMatchers("/api/admin/**").hasAnyAuthority(PermissionConstant.ROLE_ADMIN.getMessage())
                                 .anyRequest().authenticated()
                 )

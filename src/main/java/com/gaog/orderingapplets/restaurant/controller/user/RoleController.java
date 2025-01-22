@@ -1,5 +1,6 @@
 package com.gaog.orderingapplets.restaurant.controller.user;
 
+import com.gaog.orderingapplets.restaurant.annotation.SystemLog;
 import com.gaog.orderingapplets.restaurant.common.Result;
 import com.gaog.orderingapplets.restaurant.dto.role.RoleDTO;
 import com.gaog.orderingapplets.restaurant.service.RoleService;
@@ -40,6 +41,7 @@ public class RoleController {
      * @Author： ZSJ
      */
     @PostMapping("/createRole")
+    @SystemLog("createRole")
     public Result<Boolean> createRole(@RequestBody @Valid RoleDTO roleDTO) {
         return roleService.createRole(roleDTO);
     }
@@ -49,6 +51,7 @@ public class RoleController {
      * @return
      */
     @GetMapping("/getAllRoles")
+    @SystemLog("getAllRoles")
     public Result<List<RoleVO>> getAllRoles() {
         return roleService.getAllRoles();
     }
@@ -62,6 +65,7 @@ public class RoleController {
      * @Author： ZSJ
      */
     @PostMapping("/{userId}/assign/{roleId}")
+    @SystemLog("assignRoleToUser")
     public Result<Boolean> assignRoleToUser(@PathVariable Long userId, @PathVariable Long roleId) {
         return roleService.assignRoleToUser(userId, roleId);
     }

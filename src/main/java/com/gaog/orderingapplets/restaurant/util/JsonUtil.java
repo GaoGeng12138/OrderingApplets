@@ -1,5 +1,6 @@
 package com.gaog.orderingapplets.restaurant.util;
 
+import ch.qos.logback.core.rolling.helper.RenameUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -89,5 +90,10 @@ public class JsonUtil {
      */
     public static String getString(Object obj, String key) {
         return getValueByKey(obj, key, String.class);
+    }
+
+    public static void main(String[] args) {
+        RenameUtil renameUtil = new RenameUtil();
+
     }
 }

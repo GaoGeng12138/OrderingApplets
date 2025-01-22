@@ -2,6 +2,8 @@ package com.gaog.orderingapplets.restaurant.vo;
 
 import lombok.Data;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,7 +15,10 @@ import java.util.Date;
  * @Author： ZSJ
  */
 @Data
-public class UserVO {
+public class UserVO implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -2701372624645934828L;
+
     private Long id;
     private String username;
     private String email;
@@ -22,5 +27,6 @@ public class UserVO {
     private Integer isDeleted;
     private Date createdAt;
     private Date updatedAt;
+    private String roleName;
 
 }

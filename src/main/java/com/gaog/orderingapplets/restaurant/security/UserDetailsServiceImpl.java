@@ -4,6 +4,7 @@ import com.gaog.orderingapplets.restaurant.entity.Role;
 import com.gaog.orderingapplets.restaurant.entity.User;
 import com.gaog.orderingapplets.restaurant.mapper.RoleMapper;
 import com.gaog.orderingapplets.restaurant.mapper.UserMapper;
+import com.gaog.orderingapplets.restaurant.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -36,7 +37,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userMapper.selectByUsername(username);
+        UserVO user = userMapper.selectByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User Not Found with username: " + username);
         }

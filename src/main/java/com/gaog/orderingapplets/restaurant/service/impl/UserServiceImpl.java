@@ -2,6 +2,7 @@ package com.gaog.orderingapplets.restaurant.service.impl;
 
 import com.alipay.service.schema.util.StringUtil;
 import com.gaog.orderingapplets.restaurant.common.Result;
+import com.gaog.orderingapplets.restaurant.constant.CacheConstant;
 import com.gaog.orderingapplets.restaurant.converter.UserConverter;
 import com.gaog.orderingapplets.restaurant.dto.user.LoginDTO;
 import com.gaog.orderingapplets.restaurant.dto.user.PasswordChangeDTO;
@@ -13,8 +14,10 @@ import com.gaog.orderingapplets.restaurant.exception.BusinessException;
 import com.gaog.orderingapplets.restaurant.mapper.UserMapper;
 import com.gaog.orderingapplets.restaurant.service.UserService;
 import com.gaog.orderingapplets.restaurant.util.JwtUtil;
+import com.gaog.orderingapplets.restaurant.util.RedisUtil;
 import com.gaog.orderingapplets.restaurant.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -46,6 +49,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private JwtUtil jwtUtil;
+
+    @Autowired
+    private RedisUtil redisUtil;
 
     /**
      * 功能描述： 注册
@@ -89,11 +95,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result<Map<String, String>> login(LoginDTO loginDTO) {
         Map<String, String> map = new HashMap<>();
-        User user = userMapper.selectByUsername(loginDTO.getUsername());
+        String token = "";
+        UserVO user = userMapper.selectByUsername(loginDTO.getUsername());
+
+        token = (String) redisUtil.get(CacheConstant.USER_TOKEN_CACHE_KEY + loginDTO.getUsername());
+        if (StringUtils.isNotEmpty(token)) {
+            throw new BusinessException(ResponseCode.USER_IS_EXIST);
+        }
+
         if (user == null || !passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())) {
             throw new BusinessException(ResponseCode.INVALID_CREDENTIALS);
         }
-        String token = jwtUtil.generateToken(user);
+        token = jwtUtil.generateToken(user);
         if (StringUtil.isEmpty(token)) {
             map.put("token", "");
             return Result.error(map, "登录失败");
@@ -103,22 +116,37 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * 功能描述： 退出登录
+     *
+     * @param token
+     * @return
+     */
+    @Override
+    public void logout(String token) {
+        // 将 token 存储到 Redis 中，设置过期时间
+        jwtUtil.invalidateToken(token);
+    }
+
 
     /**
      * 功能描述： 获取用户信息
      *
-     * @param userId 用户 ID
+     * @param token 用户 ID
      * @return {@code UserVO }
      * @Author： ZSJ
      */
     @Override
-    public Result<UserVO> getUserInfo(Long userId) {
-        User user = userMapper.selectById(userId);
+    public Result<UserVO> getUserInfo(String token) {
+
+        if (StringUtils.isEmpty(token)) {
+            throw new BusinessException(ResponseCode.PARAM_NOT_NULL);
+        }
+        UserVO user = (UserVO) redisUtil.get(CacheConstant.USER_CACHE_KEY + token);
         if (user == null) {
             throw new BusinessException(ResponseCode.USER_NOT_EXIST);
         }
-        UserVO vo = UserConverter.convertToVO(user);
-        return Result.success(vo);
+        return Result.success(user);
     }
 
     /**

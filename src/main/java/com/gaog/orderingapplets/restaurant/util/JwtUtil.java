@@ -1,9 +1,8 @@
 package com.gaog.orderingapplets.restaurant.util;
 
 
-import com.alibaba.fastjson.JSON;
 import com.gaog.orderingapplets.restaurant.constant.CacheConstant;
-import com.gaog.orderingapplets.restaurant.entity.User;
+import com.gaog.orderingapplets.restaurant.vo.UserVO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
@@ -55,7 +54,7 @@ public class JwtUtil {
      * @return {@code String }
      * @Author： ZSJ
      */
-    public String generateToken(User user) {
+    public String generateToken(UserVO user) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + expiration * 1000);
 
@@ -68,7 +67,10 @@ public class JwtUtil {
                 .compact();
 
         // 将 token 存储到 Redis 中，设置过期时间
-        redisUtil.set(CacheConstant.USER_CACHE_KEY + token, JSON.toJSONString(user), expiration, TimeUnit.SECONDS);
+        redisUtil.set(CacheConstant.USER_TOKEN_CACHE_KEY + user.getUsername(), token, expiration, TimeUnit.SECONDS);
+
+        // 将用户信息存储到 Redis 中，设置过期时间
+        storeUserInfoInCache(token, user, expiration);
 
         return token;
     }
@@ -99,7 +101,7 @@ public class JwtUtil {
      */
     public boolean validateToken(String token) {
         try {
-            // 检查 token 是否在 Redis 中存在
+            // 检查 用户缓存 是否在 Redis 中存在
             if (redisUtil.get(CacheConstant.USER_CACHE_KEY + token) == null) {
                 // Token 不存在
                 return false;
@@ -124,5 +126,16 @@ public class JwtUtil {
     public void invalidateToken(String token) {
         // 从 Redis 中删除 token
         redisUtil.delete(CacheConstant.USER_CACHE_KEY + token);
+    }
+
+    /**
+     * 功能描述： 存储用户信息
+     *
+     * @param token
+     * @param userInfo
+     */
+    public void storeUserInfoInCache(String token, UserVO userInfo, long timeout) {
+        // 假设 redisUtil 有 set 方法
+        redisUtil.set(CacheConstant.USER_CACHE_KEY + token, userInfo, timeout, TimeUnit.SECONDS);
     }
 } 

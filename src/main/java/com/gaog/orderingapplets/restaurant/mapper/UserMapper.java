@@ -2,19 +2,45 @@ package com.gaog.orderingapplets.restaurant.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.gaog.orderingapplets.restaurant.entity.User;
+import com.gaog.orderingapplets.restaurant.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+/**
+ * 功能描述: 用户映射器
+ *
+ * @CLASSNAME： UserMapper
+ * @VERSION: 1.0.0
+ * @Date：2025/01/03
+ * @Author： ZSJ
+ */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
     /**
      * 根据用户名查询用户
      */
-    @Select("SELECT id, username, email, password,created_at, updated_at FROM users WHERE username = #{username}")
-    User selectByUsername(String username);
+    @Select("SELECT \r\n" + //
+            "    u.id AS user_id,\r\n" +
+            "    u.username,\r\n" +
+            "    u.password,\r\n" +
+            "    u.email,\r\n" +
+            "    u.is_active,\r\n" +
+            "    u.is_deleted,\r\n" +
+            "    u.created_at,\r\n" +
+            "    u.updated_at,\r\n" +
+            "    r.id AS role_id,\r\n" +
+            "    r.name AS role_name,\r\n" +
+            "    r.description AS role_description\r\n" +
+            "FROM \r\n" +
+            "    users u\r\n" +
+            "LEFT JOIN \r\n" +
+            "    user_roles ur ON u.id = ur.user_id\r\n" +
+            "LEFT JOIN \r\n" +
+            "    roles r ON ur.role_id = r.id WHERE u.username = #{username}")
+    UserVO selectByUsername(String username);
 
     /**
      * 根据邮箱查询用户

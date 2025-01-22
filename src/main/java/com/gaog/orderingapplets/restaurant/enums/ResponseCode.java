@@ -16,7 +16,7 @@ public enum ResponseCode {
     /**
      * 系统级别枚举值返回
      */
-    SUCCESS(200, "Operation successful"),
+    SUCCESS(20000, "Operation successful"),
     BAD_REQUEST(400, "错误请求"),
     UNAUTHORIZED(401, "未授权"),
     FORBIDDEN(403, "禁止访问"),
@@ -25,6 +25,7 @@ public enum ResponseCode {
     FAILURE(5000, "Operation failed"),
     SYSTEM_ERROR(5001, "系统异常，请稍后再试"),
     PARAM_ERROR(5002, "参数错误"),
+    PARAM_NOT_NULL(5003, "参数不能为空"),
 
 
     /**
@@ -34,6 +35,7 @@ public enum ResponseCode {
     EMAIL_EXISTS(4002, "邮箱已被注册"),
     INVALID_CREDENTIALS(4003, "用户名或密码错误"),
     USER_NOT_EXIST(4004,"用户不存在！"),
+    USER_IS_EXIST(4005,"用户已登录！请勿重复登录！"),
     TOKEN_EXPIRED(4011, "Token已过期"),
     TOKEN_INVALID(4012, "Token无效"),
     ORIGINAL_PASSWORD_ERROR(4013,"原始密码错误！"),

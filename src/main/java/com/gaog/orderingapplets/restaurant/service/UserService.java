@@ -37,13 +37,19 @@ public interface UserService {
     Result<Map<String, String>> login(LoginDTO loginDTO);
 
     /**
+     * 功能描述： 登出
+     * @param token
+     */
+    void logout(String token);
+
+    /**
      * 功能描述： 获取用户信息
      *
-     * @param userId 用户 ID
+     * @param token 用户 token
      * @return {@code UserVO }
      * @Author： ZSJ
      */
-    Result<UserVO> getUserInfo(Long userId);
+    Result<UserVO> getUserInfo(String token);
 
     /**
      * 功能描述： 更新用户信息
